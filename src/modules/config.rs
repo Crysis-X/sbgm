@@ -25,7 +25,7 @@ impl Config {
         if !folders.is_empty() {
           if !check_index(&folders, folder_index) {
             folder_index = folders.len() - 1;
-        }  
+          }  
         } 
         Config {
             bg_index: bg_index,
@@ -84,9 +84,9 @@ impl Config {
     }
     pub fn next_bg(&mut self) -> usize {
         let images = self.get_bgs();
-        let i = self.bg_index + 1;
+;        let i = self.bg_index + 1;
         if utils::check_index(&images, i) {
-            self.bg_index += i;
+            self.bg_index = i;
         } else {
             self.bg_index = 0;
         }
